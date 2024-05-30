@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+	int t;
+	cin >> t;
+	while(t--){
+		int n;
+		cin >> n;
+		int a[n];
+		for(int i =0 ; i < n ; i++){
+			int x;
+			cin >> a[x];
+		}
+		sort(a , a +n);
+		int p_sum=0;
+		int n_sum=0;
+		for(int i = 0 ; i < n ; i++){
+			if(a[i] < 0){
+				n_sum += a[i];
+			}else{
+				p_sum += a[i];
+			}
+		}
+	}
+	return 0;
+}
