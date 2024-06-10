@@ -5,25 +5,26 @@ int main(){
 	cin >> t;
 	while(t--){
 		int n;
-		cin >> n;
-		int ar[n];
 		string s;
-		for (int i=0; i < n ; i++){
-			cin >> ar[i];
-		}
-		for(int i = 0 ; i < n  - 2; i++){
-			if(ar[i] == 'a' || ar[i] == 'e') {
-				if(i != 0 && (ar[i-1] != 'a' && ar[i-1] != 'e') ){
-					cout << "endl";
-					s+=ar[i-1];
-				}
-				if(ar[i+2] != 'a' || ar[i+2] != 'e' ) {
-					s+=ar[i+1];
-				}
+		cin >> n;
+		cin >> s;
+		string res ="";
+		while(!s.empty()){
+			int x;
+			if(s.back() == 'a' || s.back() == 'e'){
+				x = 2;
+			}else{
+				x = 3;
 			}
-			s+=".";
-			cout << s << endl;
+			while(x--){
+				res += s.back();
+				s.pop_back();
+			}
+			res += '.';
 		}
+		res.pop_back();
+		reverse(res.begin(),res.end());
+		cout << res << endl;
 	}	
 	return 0;
 }
