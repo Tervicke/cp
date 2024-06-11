@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-int f(const vector<int>& a) {
+/*
+int f(vector<int> a) {
 	int pos = 0;
 	map<int,pair<int,int>> m;
 	for(int i = 0; i < a.size() ; i++){
@@ -16,6 +17,18 @@ int f(const vector<int>& a) {
 		}
 	}
 	return pos + 1;
+}
+*/
+int f(vector<int>& a){
+	int ma = -1;
+	int pos = -1;
+	for(int i = 0 ; i < a.size() ; i++){
+		if(a[i] > ma){
+			pos = i +1;
+			ma = a[i];
+		}
+	}
+	return pos;
 }
 
 int main(){
