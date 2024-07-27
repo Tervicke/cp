@@ -4,15 +4,11 @@ using namespace std;
 void solve(){
 	int n;
 	cin >> n;
-	int ans = 0;
-	while(n >= 4){
-		n-=4;
-		ans++;
+	if(n % 4 ==  0){
+		cout << n / 4 << endl;
+	}else{
+		cout << ((n - 2 ) / 4) + 1 << endl;
 	}
-	if(n != 0){
-		ans++;
-	}
-	cout << ans << endl;
 }
 int main(){
 	ios_base::sync_with_stdio(0);
