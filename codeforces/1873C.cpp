@@ -1,30 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
+//ALL THE BEST
+void solve(){
+	int score[10][10] = {
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,2,2,2,2,2,2,2,2,1},
+		{1,2,3,3,3,3,3,3,2,1},
+		{1,2,3,4,4,4,4,3,2,1},
+		{1,2,3,4,5,5,4,3,2,1},
+		{1,2,3,4,5,5,4,3,2,1},
+		{1,2,3,4,4,4,4,3,2,1},
+		{1,2,3,3,3,3,3,3,2,1},
+		{1,2,2,2,2,2,2,2,2,1},
+		{1,1,1,1,1,1,1,1,1,1},
+	};
+	int ans = 0;
+	for(int i = 0 ; i < 10 ; i++){
+		for(int j = 0 ; j < 10 ; j++){
+			char x;
+			cin >> x;
+			if(x == 'X'){
+				ans += score[i][j];
+			}
+		}	
+	}
+	cout << ans << "\n";
+}
 int main(){
+	ios_base::sync_with_stdio(0);
+	cin.tie(0); 
+	cout.tie(0);
 	int t;
 	cin >> t;
 	while(t--){
-		int a[11];
-		int ans = 0;
-		for(int i = 0 ; i < 10 ; i++){
-			string s;
-			cin >> s;
-			for(int j = 0 ; j < 10 ; j++){
-				if(s[j]=='X'){
-					if(j>5){
-						a[10-j]++;
-					}
-					else{
-						a[j+1]++;
-					}
-				}
-			}
-		}
-		cout << a[0] << endl;
-		for(int i = 0 ; i <= 10 ; i++){
-			ans += a[i]*(i+1);
-		}
-		cout << ans << endl;
+		solve();
 	}
 	return 0;
 }
